@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: "1"
+      author: admin
+      changes:
+        - createTable:
+            tableName: exchange_rate
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: date
+                  type: DATE
+              - column:
+                  name: source_currency
+                  type: VARCHAR(3)
+              - column:
+                  name: target_currency
+                  type: VARCHAR(3)
+              - column:
+                  name: rate
+                  type: DECIMAL(19, 6)
